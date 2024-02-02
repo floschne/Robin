@@ -1,5 +1,5 @@
 #!/bin/bash
-MAMBA_ENV_NAME=robin
+MAMBA_ENV_NAME=${MAMBA_ENV_NAME:-robin}
 MAMBA_PREFIX="${HOME}/miniforge3"
 
 print_python_env_info() {
@@ -53,4 +53,5 @@ init_mamba
 activate_mamba_env
 print_python_env_info
 
-exec("$@")
+#exec $@
+bash -c "$@"
